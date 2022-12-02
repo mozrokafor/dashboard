@@ -1,9 +1,8 @@
 const github = require('@actions/github')
 const core = require('@actions/core')
 
-async function getData() {
-    const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN')
-    console.log('Get Data from Github API here token', GITHUB_TOKEN)
+async function getData() {    
+    console.log('Get Data from Github API here token', process.env.GITHUB_TOKEN)
 
     const octokit = github.getOctokit(GITHUB_TOKEN)    
 
