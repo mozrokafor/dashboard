@@ -10,7 +10,7 @@ async function getData() {
 
 getData()
 
-const getAllWorkflows = async () => {
+async function getAllWorkflows() {
     const res = await octokit.request('GET /repos/{owner}/{repo}/actions/workflows', {
         owner: 'mozilla-mobile',
         repo: 'mozilla-vpn-client'
