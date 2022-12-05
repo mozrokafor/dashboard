@@ -63,8 +63,7 @@ async function getAllRunsForWorkflow() {
   const workflows = JSON.parse(fs.readFileSync(awfPath, "utf8")).workflows;
 
   let runs = [];
-
-  for (let workflow of workflows) {
+  for (let workflow of workflows) {    
     const {
       data: { workflow_runs },
     } = await octokit.request(
@@ -91,26 +90,28 @@ async function getAllRunsForWorkflow() {
       )
     );
 
-    let runInfo = workflow_runs.map((data) => ({
-      id: data.id,
-      name: data.name,
-      node_id: data.node_id,
-      display_title: data.display_title,
-      status: data.status,
-      conclusion: data.conclusion,
-      workflow_id: data.workflow_id,
-      check_suite_id: data.check_suite_id,
-      html_url: data.html_url,
-      head_commit: data.head_commit,
-      conclusion: data.conclusion,
-      run_started_at: data.run_started_at,
-    }));
+    let workflowArray = []
+    for(let workflow_run of workflow_runs){
+        const runInfo =  {
+          id: workflow_run.id,
+          name: workflow_run.name,
+          node_id: workflow_run.node_id,
+          display_title: workflow_run.display_title,
+          status: workflow_run.status,
+          workflow_id: workflow_run.workflow_id,
+          check_suite_id: workflow_run.check_suite_id,
+          html_url: workflow_run.html_url,
+          head_commit: workflow_run.head_commit,
+          conclusion: workflow_run.conclusion,
+          run_started_at: workflow_run.run_started_at,
+        };
 
-    runs.push(runInfo);
+        workflowArray.push(runInfo);
+    }
 
     const existingWorkflowRunsArray = existingWorkflowRunsObject.workflow_runs;
     const mergedWorkflowruns = _.unionBy(
-      runs,
+      workflowArray,
       existingWorkflowRunsArray,
       "node_id"
     );
@@ -120,6 +121,8 @@ async function getAllRunsForWorkflow() {
       `./data/workflowruns/workflowruns-${workflow.workflow_id}.json`,
       JSON.stringify(existingWorkflowRunsObject)
     );
+
+    runs.push(workflowArray)
   }
 
   return runs;
