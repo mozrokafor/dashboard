@@ -29,20 +29,25 @@ async function getAllWorkflows() {
   }
 
   const {
-    data: { workflows },
+    data: { workflow_runs },
   } = await octokit.request(
     "GET /repos/{owner}/{repo}/actions/runs?branch=main",
     orgInfo
   );
+
   const existingWorkflowsString = fs.readFileSync(awfPath, "utf8");
   const existingWorkflowsObject = JSON.parse(existingWorkflowsString);
 
   let wfArray = [];
   let workflowsHash = {};
 
-  for (let workflow of workflows) {
+  for (let workflow of workflow_runs) {
     if (!(workflow.name in workflowsHash)) {
       workflowsHash[workflow.name] = workflow.id;
+      workflow.actor = undefined;
+      workflow.triggering_actor = undefined;
+      workflow.repository = undefined;
+      workflow.head_repository = undefined;
       wfArray.push(workflow);
     }
   }
@@ -66,7 +71,7 @@ async function getAllRunsForWorkflow() {
       "GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs?branch=main&per_page=100",
       {
         ...orgInfo,
-        workflow_id: workflow.id,
+        workflow_id: workflow.workflow_id,
       }
     );
 
