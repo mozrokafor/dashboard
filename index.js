@@ -21,8 +21,8 @@ getData();
 async function getAllWorkflows() {
   const awfPath = "./data/allworkflows.json";
   await checkPath('./data')
-  await checkPath('./data/checkruns')
-  await checkPath('./data/workflowruns')
+  await checkNestedPath('./data/checkruns')
+  await checkNestedPath('./data/workflowruns')
 
   if (!fs.existsSync(awfPath)) {
     fs.writeFileSync(awfPath, JSON.stringify({ workflows: [] }));
@@ -319,9 +319,9 @@ async function getCheckRuns(check_suite_id) {
 }
 
 async function checkPath(path) {
-    if (!fs.existsSync(path)) fs.mkdirSync(dir)
+    if (!fs.existsSync(path)) fs.mkdirSync(path)
 }
 
 async function checkNestedPath(path) {
-    if (!fs.existsSync(path)) fs.mkdirSync(dir, { recursive: true })
+    if (!fs.existsSync(path)) fs.mkdirSync(path, { recursive: true })
 }
