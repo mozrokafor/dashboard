@@ -76,17 +76,17 @@ async function getAllRunsForWorkflow() {
     );
 
     if (
-      !fs.existsSync(`./data/workflowruns/workflowruns-${workflow.id}.json`)
+      !fs.existsSync(`./data/workflowruns/workflowruns-${workflow.workflow_id}.json`)
     ) {
       fs.writeFileSync(
-        `./data/workflowruns/workflowruns-${workflow.id}.json`,
+        `./data/workflowruns/workflowruns-${workflow.workflow_id}.json`,
         JSON.stringify({ workflow_runs: [] })
       );
     }
 
     const existingWorkflowRunsObject = JSON.parse(
       fs.readFileSync(
-        `./data/workflowruns/workflowruns-${workflow.id}.json`,
+        `./data/workflowruns/workflowruns-${workflow.workflow_id}.json`,
         "utf8"
       )
     );
@@ -117,7 +117,7 @@ async function getAllRunsForWorkflow() {
     existingWorkflowRunsObject.workflow_runs = mergedWorkflowruns;
 
     fs.writeFileSync(
-      `./data/workflowruns/workflowruns-${workflow.id}.json`,
+      `./data/workflowruns/workflowruns-${workflow.workflow_id}.json`,
       JSON.stringify(existingWorkflowRunsObject)
     );
   }
