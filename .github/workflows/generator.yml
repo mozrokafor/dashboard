@@ -1,13 +1,11 @@
 name: Generate VPN Dashboard Data
 on:
-  push:
-    branches:
-      - main
-      - 'releases/**'
   pull_request:
     branches:
       - main
-      - 'releases/**'
+
+  schedule:    
+    - cron: '*/30 * * * *'     
 
   workflow_dispatch:
 
