@@ -20,9 +20,9 @@ getData();
 
 async function getAllWorkflows() {
   const awfPath = "./data/allworkflows.json";
-  await checkPath('./data')
-  await checkNestedPath('./data/checkruns')
-  await checkNestedPath('./data/workflowruns')
+  await checkPath("./data");
+  await checkNestedPath("./data/checkruns");
+  await checkNestedPath("./data/workflowruns");
 
   if (!fs.existsSync(awfPath)) {
     fs.writeFileSync(awfPath, JSON.stringify({ workflows: [] }));
@@ -31,7 +31,7 @@ async function getAllWorkflows() {
   const {
     data: { workflows },
   } = await octokit.request(
-    "GET /repos/{owner}/{repo}/actions/workflows",
+    "GET /repos/{owner}/{repo}/actions/runs?branch=main",
     orgInfo
   );
   const existingWorkflowsString = fs.readFileSync(awfPath, "utf8");
@@ -48,7 +48,6 @@ async function getAllWorkflows() {
   }
 
   existingWorkflowsObject.workflows = wfArray;
-
   fs.writeFileSync(awfPath, JSON.stringify(existingWorkflowsObject));
 
   return wfArray;
@@ -319,9 +318,9 @@ async function getCheckRuns(check_suite_id) {
 }
 
 async function checkPath(path) {
-    if (!fs.existsSync(path)) fs.mkdirSync(path)
+  if (!fs.existsSync(path)) fs.mkdirSync(path);
 }
 
 async function checkNestedPath(path) {
-    if (!fs.existsSync(path)) fs.mkdirSync(path, { recursive: true })
+  if (!fs.existsSync(path)) fs.mkdirSync(path, { recursive: true });
 }
