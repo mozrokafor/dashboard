@@ -16,11 +16,12 @@ async function getData() {
   await getRunsForSingleWorkflow();
   await generateTestHistoryInfo();
   await generateWorkflowStats();
+  await updateAllWorkflowRuns();
 }
 
 getData();
 
-async function generateWorkflowStats(){
+async function generateWorkflowStats() {
   const awfPath = "./data/allworkflows.json";
   const awfsPath = "./data/allworkflowstats.json";
   const durations = moment.duration();
@@ -34,13 +35,13 @@ async function generateWorkflowStats(){
     branch: "main",
   };
 
-  let stats_array = []
+  let stats_array = [];
 
   const existingWorkflowStatsObject = JSON.parse(
     fs.readFileSync(awfsPath, "utf8")
   );
-  
-  for (let workflow of workflows){
+
+  for (let workflow of workflows) {
     const duration = await calculateDuration({
       start: workflow.created_at,
       end: workflow.updated_at,
@@ -48,7 +49,7 @@ async function generateWorkflowStats(){
     durations.add(moment.duration(duration));
     if (workflow.display_title !== "PPA Automated Releases") {
       stats.display_title = workflow.display_title;
-      stats.created_at = workflow.created_at
+      stats.created_at = workflow.created_at;
     }
   }
 
@@ -58,16 +59,17 @@ async function generateWorkflowStats(){
   const secs = formatted.split(":")[2];
 
   stats.duration = `${Number(hrs)}hr ${Number(mins)}m ${secs}s`;
-  stats_array.push(stats)
+  stats_array.push(stats);
 
-  const existingWorkflowStatsArray = existingWorkflowStatsObject.workflows_stats;
-  
+  const existingWorkflowStatsArray =
+    existingWorkflowStatsObject.workflows_stats;
+
   const mergedWorkflowStatsArray = _.unionBy(
     stats_array,
     existingWorkflowStatsArray,
     "display_title"
   );
-  
+
   fs.writeFileSync(awfsPath, JSON.stringify(mergedWorkflowStatsArray));
 }
 
@@ -108,6 +110,43 @@ async function getAllWorkflows() {
   existingWorkflowsObject.workflows = wfArray;
   fs.writeFileSync(awfPath, JSON.stringify(existingWorkflowsObject));
   return wfArray;
+}
+
+async function updateAllWorkflowRuns() {
+  const awfPath = "./data/allworkflows.json";
+  const workflowsObject = JSON.parse(fs.readFileSync(awfPath, "utf8"));
+  const workflowsArray = JSON.parse(fs.readFileSync(awfPath, "utf8")).workflows;
+  let workflows = [];
+
+  for (let workflow of workflowsArray) {
+    let runs = [];
+    const existingWorkflowRunsArray = JSON.parse(
+      fs.readFileSync(
+        `./data/workflowruns/workflowruns-${workflow.workflow_id}.json`,
+        "utf8"
+      )
+    ).workflow_runs;
+
+    for (let workflow_run of existingWorkflowRunsArray) {
+      while (runs.length < 10) {
+        const wfRun = {
+          name: workflow_run.name,
+          html_url: workflow_run.html_url,
+          display_title: workflow_run.display_title,
+          conclusion: workflow_run.conclusion,
+          author: workflow_run.head_commit.author.name,
+        };
+
+        runs.push(wfRun);
+      }
+    }
+
+    const newWf = { ...workflow, runs };
+    workflows.push(newWf);
+  }
+
+  workflowsObject.workflows = workflows;
+  fs.writeFileSync(awfPath, JSON.stringify(workflowsObject));
 }
 
 async function getAllRunsForWorkflow() {
@@ -394,5 +433,5 @@ async function calculateDuration({ start, end }) {
   const hrs = moment.utc(endTime.diff(startTime)).format("HH");
   const min = moment.utc(endTime.diff(startTime)).format("mm");
   const sec = moment.utc(endTime.diff(startTime)).format("ss");
-  return `${Number(hrs) === 23 ? '00' : hrs}:${min}:${sec}`;
+  return `${Number(hrs) === 23 ? "00" : hrs}:${min}:${sec}`;
 }
