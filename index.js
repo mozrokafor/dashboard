@@ -107,8 +107,6 @@ async function getAllWorkflows() {
 
   existingWorkflowsObject.workflows = wfArray;
   fs.writeFileSync(awfPath, JSON.stringify(existingWorkflowsObject));
-  console.log('wf length', wfArray.length);
-  await getWorkflowStats(wfArray);
   return wfArray;
 }
 
