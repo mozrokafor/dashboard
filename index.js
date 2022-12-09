@@ -1,5 +1,6 @@
 require("dotenv").config();
 const github = require("@actions/github");
+const moment = require("moment");
 const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
 const fs = require("fs");
 const _ = require("lodash");
@@ -14,9 +15,61 @@ async function getData() {
   await getAllRunsForWorkflow();
   await getRunsForSingleWorkflow();
   await generateTestHistoryInfo();
+  await generateWorkflowStats();
 }
 
 getData();
+
+async function generateWorkflowStats(){
+  const awfPath = "./data/allworkflows.json";
+  const awfsPath = "./data/allworkflowstats.json";
+  const durations = moment.duration();
+  const workflows = JSON.parse(fs.readFileSync(awfPath, "utf8")).workflows;
+
+  if (!fs.existsSync(awfsPath)) {
+    fs.writeFileSync(awfsPath, JSON.stringify({ workflows_stats: [] }));
+  }
+
+  let stats = {
+    branch: "main",
+  };
+
+  let stats_array = []
+
+  const existingWorkflowStatsObject = JSON.parse(
+    fs.readFileSync(awfsPath, "utf8")
+  );
+  
+  for (let workflow of workflows){
+    const duration = await calculateDuration({
+      start: workflow.created_at,
+      end: workflow.updated_at,
+    });
+    durations.add(moment.duration(duration));
+    if (workflow.display_title !== "PPA Automated Releases") {
+      stats.display_title = workflow.display_title;
+      stats.created_at = workflow.created_at
+    }
+  }
+
+  const formatted = moment.utc(durations.asMilliseconds()).format("HH:mm:ss");
+  const hrs = formatted.split(":")[0];
+  const mins = formatted.split(":")[1];
+  const secs = formatted.split(":")[2];
+
+  stats.duration = `${Number(hrs)}hr ${Number(mins)}m ${secs}s`;
+  stats_array.push(stats)
+
+  const existingWorkflowStatsArray = existingWorkflowStatsObject.workflows_stats;
+  
+  const mergedWorkflowStatsArray = _.unionBy(
+    stats_array,
+    existingWorkflowStatsArray,
+    "display_title"
+  );
+  
+  fs.writeFileSync(awfsPath, JSON.stringify(mergedWorkflowStatsArray));
+}
 
 async function getAllWorkflows() {
   const awfPath = "./data/allworkflows.json";
@@ -54,7 +107,8 @@ async function getAllWorkflows() {
 
   existingWorkflowsObject.workflows = wfArray;
   fs.writeFileSync(awfPath, JSON.stringify(existingWorkflowsObject));
-
+  console.log('wf length', wfArray.length);
+  await getWorkflowStats(wfArray);
   return wfArray;
 }
 
@@ -63,7 +117,7 @@ async function getAllRunsForWorkflow() {
   const workflows = JSON.parse(fs.readFileSync(awfPath, "utf8")).workflows;
 
   let runs = [];
-  for (let workflow of workflows) {    
+  for (let workflow of workflows) {
     const {
       data: { workflow_runs },
     } = await octokit.request(
@@ -75,7 +129,9 @@ async function getAllRunsForWorkflow() {
     );
 
     if (
-      !fs.existsSync(`./data/workflowruns/workflowruns-${workflow.workflow_id}.json`)
+      !fs.existsSync(
+        `./data/workflowruns/workflowruns-${workflow.workflow_id}.json`
+      )
     ) {
       fs.writeFileSync(
         `./data/workflowruns/workflowruns-${workflow.workflow_id}.json`,
@@ -90,23 +146,23 @@ async function getAllRunsForWorkflow() {
       )
     );
 
-    let workflowArray = []
-    for(let workflow_run of workflow_runs){
-        const runInfo =  {
-          id: workflow_run.id,
-          name: workflow_run.name,
-          node_id: workflow_run.node_id,
-          display_title: workflow_run.display_title,
-          status: workflow_run.status,
-          workflow_id: workflow_run.workflow_id,
-          check_suite_id: workflow_run.check_suite_id,
-          html_url: workflow_run.html_url,
-          head_commit: workflow_run.head_commit,
-          conclusion: workflow_run.conclusion,
-          run_started_at: workflow_run.run_started_at,
-        };
+    let workflowArray = [];
+    for (let workflow_run of workflow_runs) {
+      const runInfo = {
+        id: workflow_run.id,
+        name: workflow_run.name,
+        node_id: workflow_run.node_id,
+        display_title: workflow_run.display_title,
+        status: workflow_run.status,
+        workflow_id: workflow_run.workflow_id,
+        check_suite_id: workflow_run.check_suite_id,
+        html_url: workflow_run.html_url,
+        head_commit: workflow_run.head_commit,
+        conclusion: workflow_run.conclusion,
+        run_started_at: workflow_run.run_started_at,
+      };
 
-        workflowArray.push(runInfo);
+      workflowArray.push(runInfo);
     }
 
     const existingWorkflowRunsArray = existingWorkflowRunsObject.workflow_runs;
@@ -122,7 +178,7 @@ async function getAllRunsForWorkflow() {
       JSON.stringify(existingWorkflowRunsObject)
     );
 
-    runs.push(workflowArray)
+    runs.push(workflowArray);
   }
 
   return runs;
@@ -331,4 +387,14 @@ async function checkPath(path) {
 
 async function checkNestedPath(path) {
   if (!fs.existsSync(path)) fs.mkdirSync(path, { recursive: true });
+}
+
+async function calculateDuration({ start, end }) {
+  const startTime = moment(start, "HH:mm:ss a");
+  const endTime = moment(end, "HH:mm:ss a");
+
+  const hrs = moment.utc(endTime.diff(startTime)).format("HH");
+  const min = moment.utc(endTime.diff(startTime)).format("mm");
+  const sec = moment.utc(endTime.diff(startTime)).format("ss");
+  return `${Number(hrs) === 23 ? '00' : hrs}:${min}:${sec}`;
 }
