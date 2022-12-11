@@ -128,17 +128,14 @@ async function updateAllWorkflowRuns() {
     ).workflow_runs;
 
     for (let workflow_run of existingWorkflowRunsArray) {
-      while (runs.length < 10) {
-        const wfRun = {
-          name: workflow_run.name,
-          html_url: workflow_run.html_url,
-          display_title: workflow_run.display_title,
-          conclusion: workflow_run.conclusion,
-          author: workflow_run.head_commit.author.name,
-        };
+      const wfRun = {
+        name: workflow_run.name,
+        html_url: workflow_run.html_url,
+        display_title: workflow_run.display_title,
+        conclusion: workflow_run.conclusion,
+      };
 
-        runs.push(wfRun);
-      }
+      if (runs.length < 10 && workflow_run.display_title) runs.push(wfRun);
     }
 
     const newWf = { ...workflow, runs };
