@@ -136,7 +136,7 @@ async function updateAllWorkflowRuns() {
         author: workflow_run.head_commit?.author?.name,
       };
 
-      if (runs.length < 10 && workflow_run.status === "completed") runs.push(wfRun);
+      if (runs.length < 10 && workflow_run.status !== "cancelled") runs.push(wfRun);
     }
 
     const newWf = { ...workflow, runs };
