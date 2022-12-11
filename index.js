@@ -50,6 +50,7 @@ async function generateWorkflowStats() {
     if (workflow.display_title !== "PPA Automated Releases") {
       stats.display_title = workflow.display_title;
       stats.created_at = workflow.created_at;
+      stats.author = workflow.head_commit.author.name;
     }
   }
 
@@ -136,7 +137,7 @@ async function updateAllWorkflowRuns() {
         author: workflow_run.head_commit?.author?.name,
       };
 
-      if (runs.length < 10 && workflow_run.status !== "cancelled") runs.push(wfRun);
+      if (runs.length < 10 && workflow_run.conclusion !== "cancelled") runs.push(wfRun);
     }
 
     const newWf = { ...workflow, runs };
