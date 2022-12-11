@@ -132,10 +132,11 @@ async function updateAllWorkflowRuns() {
         name: workflow_run.name,
         html_url: workflow_run.html_url,
         display_title: workflow_run.display_title,
-        conclusion: workflow_run.conclusion,
+        conclusion: workflow_run.conclusion,        
+        author: workflow_run.head_commit?.author?.name,
       };
 
-      if (runs.length < 10 && workflow_run.display_title) runs.push(wfRun);
+      if (runs.length < 10 && workflow_run.status === "completed") runs.push(wfRun);
     }
 
     const newWf = { ...workflow, runs };
