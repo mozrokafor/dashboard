@@ -1,6 +1,7 @@
 require("dotenv").config();
 const github = require("@actions/github");
-const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
+const moment = require("moment");
+const octokit = github.getOctokit('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');
 const fs = require("fs");
 const _ = require("lodash");
 
@@ -11,12 +12,67 @@ const orgInfo = {
 
 async function getData() {
   await getAllWorkflows();
-  await getAllRunsForWorkflow();
-  await getRunsForSingleWorkflow();
-  await generateTestHistoryInfo();
+  // await getAllRunsForWorkflow();
+  // await getRunsForSingleWorkflow();
+  // await generateTestHistoryInfo();
+  // await generateWorkflowStats();
+  // await updateAllWorkflowRuns();
 }
 
 getData();
+
+async function generateWorkflowStats() {
+  const awfPath = "./data/allworkflows.json";
+  const awfsPath = "./data/allworkflowstats.json";
+  const durations = moment.duration();
+  const workflows = JSON.parse(fs.readFileSync(awfPath, "utf8")).workflows;
+
+  if (!fs.existsSync(awfsPath)) {
+    fs.writeFileSync(awfsPath, JSON.stringify({ workflows_stats: [] }));
+  }
+
+  let stats = {
+    branch: "main",
+  };
+
+  let stats_array = [];
+
+  const existingWorkflowStatsObject = JSON.parse(
+    fs.readFileSync(awfsPath, "utf8")
+  );
+
+  for (let workflow of workflows) {
+    const duration = await calculateDuration({
+      start: workflow.created_at,
+      end: workflow.updated_at,
+    });
+    durations.add(moment.duration(duration));
+    if (workflow.display_title !== "PPA Automated Releases") {
+      stats.display_title = workflow.display_title;
+      stats.created_at = workflow.created_at;
+      stats.author = workflow.head_commit.author.name;
+    }
+  }
+
+  const formatted = moment.utc(durations.asMilliseconds()).format("HH:mm:ss");
+  const hrs = formatted.split(":")[0];
+  const mins = formatted.split(":")[1];
+  const secs = formatted.split(":")[2];
+
+  stats.duration = `${Number(hrs)}hr ${Number(mins)}m ${secs}s`;
+  stats_array.push(stats);
+
+  const existingWorkflowStatsArray =
+    existingWorkflowStatsObject.workflows_stats;
+
+  const mergedWorkflowStatsArray = _.unionBy(
+    stats_array,
+    existingWorkflowStatsArray,
+    "display_title"
+  );
+
+  fs.writeFileSync(awfsPath, JSON.stringify(mergedWorkflowStatsArray));
+}
 
 async function getAllWorkflows() {
   const awfPath = "./data/allworkflows.json";
@@ -54,8 +110,42 @@ async function getAllWorkflows() {
 
   existingWorkflowsObject.workflows = wfArray;
   fs.writeFileSync(awfPath, JSON.stringify(existingWorkflowsObject));
-
   return wfArray;
+}
+
+async function updateAllWorkflowRuns() {
+  const awfPath = "./data/allworkflows.json";
+  const workflowsObject = JSON.parse(fs.readFileSync(awfPath, "utf8"));
+  const workflowsArray = JSON.parse(fs.readFileSync(awfPath, "utf8")).workflows;
+  let workflows = [];
+
+  for (let workflow of workflowsArray) {
+    let runs = [];
+    const existingWorkflowRunsArray = JSON.parse(
+      fs.readFileSync(
+        `./data/workflowruns/workflowruns-${workflow.workflow_id}.json`,
+        "utf8"
+      )
+    ).workflow_runs;
+
+    for (let workflow_run of existingWorkflowRunsArray) {
+      const wfRun = {
+        name: workflow_run.name,
+        html_url: workflow_run.html_url,
+        display_title: workflow_run.display_title,
+        conclusion: workflow_run.conclusion,        
+        author: workflow_run.head_commit?.author?.name,
+      };
+
+      if (runs.length < 10 && workflow_run.conclusion !== "cancelled") runs.push(wfRun);
+    }
+
+    const newWf = { ...workflow, runs };
+    workflows.push(newWf);
+  }
+
+  workflowsObject.workflows = workflows;
+  fs.writeFileSync(awfPath, JSON.stringify(workflowsObject));
 }
 
 async function getAllRunsForWorkflow() {
@@ -63,7 +153,7 @@ async function getAllRunsForWorkflow() {
   const workflows = JSON.parse(fs.readFileSync(awfPath, "utf8")).workflows;
 
   let runs = [];
-  for (let workflow of workflows) {    
+  for (let workflow of workflows) {
     const {
       data: { workflow_runs },
     } = await octokit.request(
@@ -75,7 +165,9 @@ async function getAllRunsForWorkflow() {
     );
 
     if (
-      !fs.existsSync(`./data/workflowruns/workflowruns-${workflow.workflow_id}.json`)
+      !fs.existsSync(
+        `./data/workflowruns/workflowruns-${workflow.workflow_id}.json`
+      )
     ) {
       fs.writeFileSync(
         `./data/workflowruns/workflowruns-${workflow.workflow_id}.json`,
@@ -90,23 +182,23 @@ async function getAllRunsForWorkflow() {
       )
     );
 
-    let workflowArray = []
-    for(let workflow_run of workflow_runs){
-        const runInfo =  {
-          id: workflow_run.id,
-          name: workflow_run.name,
-          node_id: workflow_run.node_id,
-          display_title: workflow_run.display_title,
-          status: workflow_run.status,
-          workflow_id: workflow_run.workflow_id,
-          check_suite_id: workflow_run.check_suite_id,
-          html_url: workflow_run.html_url,
-          head_commit: workflow_run.head_commit,
-          conclusion: workflow_run.conclusion,
-          run_started_at: workflow_run.run_started_at,
-        };
+    let workflowArray = [];
+    for (let workflow_run of workflow_runs) {
+      const runInfo = {
+        id: workflow_run.id,
+        name: workflow_run.name,
+        node_id: workflow_run.node_id,
+        display_title: workflow_run.display_title,
+        status: workflow_run.status,
+        workflow_id: workflow_run.workflow_id,
+        check_suite_id: workflow_run.check_suite_id,
+        html_url: workflow_run.html_url,
+        head_commit: workflow_run.head_commit,
+        conclusion: workflow_run.conclusion,
+        run_started_at: workflow_run.run_started_at,
+      };
 
-        workflowArray.push(runInfo);
+      workflowArray.push(runInfo);
     }
 
     const existingWorkflowRunsArray = existingWorkflowRunsObject.workflow_runs;
@@ -122,7 +214,7 @@ async function getAllRunsForWorkflow() {
       JSON.stringify(existingWorkflowRunsObject)
     );
 
-    runs.push(workflowArray)
+    runs.push(workflowArray);
   }
 
   return runs;
@@ -151,82 +243,73 @@ async function generateTestHistoryInfo() {
       flaked_count: 0,
     };
 
-    let check_runs;    
-    try {      
-      check_runs = await getCheckRuns(workflow.workflow_run.check_suite_id);
-    } catch (error) {
-      console.log(`Unable to retrieve check runs for suite id: ${workflow.workflow_run.check_suite_id}`, error);      
-    }
+    const check_runs = await getCheckRuns(workflow.workflow_run.check_suite_id);
+    for (let check_run of check_runs) {
+      let testInfo = {
+        test: check_run,
+        test_annotations: [],
+        test_flake_history: [],
+        test_flaked_count: 0,
+        test_failed_count: 0,
+        test_passed_count: 0,
+      };
 
-    if(check_runs){
-      for (let check_run of check_runs) {
-        let testInfo = {
-          test: check_run,
-          test_annotations: [],
-          test_flake_history: [],
-          test_flaked_count: 0,
-          test_failed_count: 0,
-          test_passed_count: 0,
+      testInfo.test_name = check_run.name;
+      testInfo.test_started = check_run.started_at;
+      testInfo.test_completed = check_run.completed_at;
+
+      // add annotations/flakes per testrun (check run)
+      if (testInfo.test.output.annotations_count > 0) {
+        let flake = {
+          flakes: 0,
+          failures: 0,
+          messages: [],
+          start_line: [],
+          end_line: [],
         };
-  
-        testInfo.test_name = check_run.name;
-        testInfo.test_started = check_run.started_at;
-        testInfo.test_completed = check_run.completed_at;
-  
-        // add annotations/flakes per testrun (check run)
-        if (testInfo.test.output.annotations_count > 0) {
-          let flake = {
-            flakes: 0,
-            failures: 0,
-            messages: [],
-            start_line: [],
-            end_line: [],
-          };
-  
-          let message = {};
-  
-          const annotations = await getAnnotations(testInfo.test.id);
-  
-          testInfo.test_annotations = annotations;
-          flake.test_name = testInfo.test_name;
-  
-          for (let annotation of annotations) {
-            if (annotation.annotation_level === "warning") {
-              workflow.flaked_count++;
-              testInfo.test_flaked_count++;
-              flake.flakes++;
-              message.info = annotation.message;
-              message.start_line = annotation.start_line;
-              message.end_line = annotation.end_line;
-              flake.messages.push(message);
-            }
-  
-            if (annotation.annotation_level === "failure") {
-              workflow.failed_count++;
-              testInfo.test_failed_count++;
-              flake.failures++;
-              message.info = annotation.message;
-              message.start_line = annotation.start_line;
-              message.end_line = annotation.end_line;
-              flake.messages.push(message);
-            }
-  
-            testInfo.test_flake_history.push(flake);
+
+        let message = {};
+
+        const annotations = await getAnnotations(testInfo.test.id);
+
+        testInfo.test_annotations = annotations;
+        flake.test_name = testInfo.test_name;
+
+        for (let annotation of annotations) {
+          if (annotation.annotation_level === "warning") {
+            workflow.flaked_count++;
+            testInfo.test_flaked_count++;
+            flake.flakes++;
+            message.info = annotation.message;
+            message.start_line = annotation.start_line;
+            message.end_line = annotation.end_line;
+            flake.messages.push(message);
           }
+
+          if (annotation.annotation_level === "failure") {
+            workflow.failed_count++;
+            testInfo.test_failed_count++;
+            flake.failures++;
+            message.info = annotation.message;
+            message.start_line = annotation.start_line;
+            message.end_line = annotation.end_line;
+            flake.messages.push(message);
+          }
+
+          testInfo.test_flake_history.push(flake);
         }
-  
-        // update test run and workflow run passed counts
-        if (check_run.conclusion === "success") {
-          workflow.passed_count++;
-          testInfo.test_passed_count++;
-        }
-  
-        workflow.test_runs.push(testInfo);
       }
 
-      return_data.push(workflow);
+      // update test run and workflow run passed counts
+      if (check_run.conclusion === "success") {
+        workflow.passed_count++;
+        testInfo.test_passed_count++;
+      }
+
+      workflow.test_runs.push(testInfo);
     }
 
+    return_data.push(workflow);
   }
 
   const existingTestHistoryObject = JSON.parse(fs.readFileSync(thPath, "utf8"));
@@ -340,4 +423,14 @@ async function checkPath(path) {
 
 async function checkNestedPath(path) {
   if (!fs.existsSync(path)) fs.mkdirSync(path, { recursive: true });
+}
+
+async function calculateDuration({ start, end }) {
+  const startTime = moment(start, "HH:mm:ss a");
+  const endTime = moment(end, "HH:mm:ss a");
+
+  const hrs = moment.utc(endTime.diff(startTime)).format("HH");
+  const min = moment.utc(endTime.diff(startTime)).format("mm");
+  const sec = moment.utc(endTime.diff(startTime)).format("ss");
+  return `${Number(hrs) === 23 ? "00" : hrs}:${min}:${sec}`;
 }
