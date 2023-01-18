@@ -1,7 +1,7 @@
 require("dotenv").config();
 const github = require("@actions/github");
 const moment = require("moment");
-const octokit = github.getOctokit('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');
+const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
 const fs = require("fs");
 const _ = require("lodash");
 
@@ -12,11 +12,11 @@ const orgInfo = {
 
 async function getData() {
   await getAllWorkflows();
-  // await getAllRunsForWorkflow();
-  // await getRunsForSingleWorkflow();
-  // await generateTestHistoryInfo();
-  // await generateWorkflowStats();
-  // await updateAllWorkflowRuns();
+  await getAllRunsForWorkflow();
+  await getRunsForSingleWorkflow();
+  await generateTestHistoryInfo();
+  await generateWorkflowStats();
+  await updateAllWorkflowRuns();
 }
 
 getData();
