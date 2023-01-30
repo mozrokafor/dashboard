@@ -5,6 +5,8 @@ const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
 const fs = require("fs");
 const _ = require("lodash");
 
+const branch = "releases/2.13.0"
+
 const orgInfo = {
   owner: "mozilla-mobile",
   repo: "mozilla-vpn-client",
@@ -32,7 +34,7 @@ async function generateWorkflowStats() {
   }
 
   let stats = {
-    branch: "main",
+    branch,
   };
 
   let stats_array = [];
@@ -87,7 +89,7 @@ async function getAllWorkflows() {
   const {
     data: { workflow_runs },
   } = await octokit.request(
-    "GET /repos/{owner}/{repo}/actions/runs?branch=main",
+    `GET /repos/{owner}/{repo}/actions/runs?branch=${branch}`,
     orgInfo
   );
 
@@ -157,7 +159,7 @@ async function getAllRunsForWorkflow() {
     const {
       data: { workflow_runs },
     } = await octokit.request(
-      "GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs?branch=main&per_page=100",
+      `GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs?branch=${branch}&per_page=100`,
       {
         ...orgInfo,
         workflow_id: workflow.workflow_id,
@@ -356,7 +358,7 @@ async function getRunsForSingleWorkflow() {
     const {
       data: { workflow_runs },
     } = await octokit.request(
-      "GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs?branch=main&status=completed&per_page=100",
+      `GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs?branch=${branch}&status=completed&per_page=100`,
       {
         ...orgInfo,
         workflow_id,
