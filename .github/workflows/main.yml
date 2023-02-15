@@ -1,4 +1,4 @@
-name: Generate VPN Main Branch Dashboard Data
+name: Main Branch Dashboard Data
 on:
   pull_request:
     branches:

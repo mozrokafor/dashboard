@@ -93,6 +93,8 @@ async function getAllWorkflows() {
     orgInfo
   );
 
+  console.log('96 ====== ', workflow_runs.length);
+
   const existingWorkflowsString = fs.readFileSync(awfPath, "utf8");
   const existingWorkflowsObject = JSON.parse(existingWorkflowsString);
 
