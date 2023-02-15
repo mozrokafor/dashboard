@@ -93,8 +93,6 @@ async function getAllWorkflows() {
     orgInfo
   );
 
-  console.log('96 ====== ', workflow_runs.length);
-
   const existingWorkflowsString = fs.readFileSync(awfPath, "utf8");
   const existingWorkflowsObject = JSON.parse(existingWorkflowsString);
 
@@ -112,6 +110,8 @@ async function getAllWorkflows() {
     }
   }
 
+  console.log('113 ========wfArray======== ', wfArray.length);
+
   existingWorkflowsObject.workflows = wfArray;
   fs.writeFileSync(awfPath, JSON.stringify(existingWorkflowsObject));
   return wfArray;
@@ -123,6 +123,7 @@ async function updateAllWorkflowRuns() {
   const workflowsArray = JSON.parse(fs.readFileSync(awfPath, "utf8")).workflows;
   let workflows = [];
 
+  console.log('126 ======workflowArray======= ', workflowsArray.length);
   for (let workflow of workflowsArray) {
     let runs = [];
     const existingWorkflowRunsArray = JSON.parse(
@@ -148,6 +149,7 @@ async function updateAllWorkflowRuns() {
     workflows.push(newWf);
   }
 
+  console.log('152 ======runs========= ', runs.length);
   workflowsObject.workflows = workflows;
   fs.writeFileSync(awfPath, JSON.stringify(workflowsObject));
 }
@@ -221,6 +223,8 @@ async function getAllRunsForWorkflow() {
     runs.push(workflowArray);
   }
 
+  console.log('226 =======runs======== ', runs);
+
   return runs;
 }
 
@@ -238,6 +242,7 @@ async function generateTestHistoryInfo() {
     fs.writeFileSync(thPath, JSON.stringify({ test_history: [] }));
   }
 
+  console.log('245 ===============existingWorkflowRunsArray============== ', existingWorkflowRunsArray.length);
   for (let workflow_run of existingWorkflowRunsArray) {
     let workflow = {
       workflow_run,
@@ -314,6 +319,8 @@ async function generateTestHistoryInfo() {
     }
 
     return_data.push(workflow);
+
+    console.log('323 ====return_data==============', return_data);
   }
 
   const existingTestHistoryObject = JSON.parse(fs.readFileSync(thPath, "utf8"));
@@ -356,6 +363,7 @@ async function getRunsForSingleWorkflow() {
   );
   const origArray = existingFunctionalRunsObject.workflow_runs;
 
+  console.log('364 ======origArray=======', origArray.length);
   try {
     const {
       data: { workflow_runs },
