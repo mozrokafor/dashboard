@@ -149,7 +149,7 @@ async function updateAllWorkflowRuns() {
     workflows.push(newWf);
   }
 
-  console.log('152 ======runs========= ', runs.length);
+  console.log('152 ======workflows========= ', workflows.length);
   workflowsObject.workflows = workflows;
   fs.writeFileSync(awfPath, JSON.stringify(workflowsObject));
 }
@@ -158,6 +158,7 @@ async function getAllRunsForWorkflow() {
   const awfPath = "./data/release/allworkflows.json";
   const workflows = JSON.parse(fs.readFileSync(awfPath, "utf8")).workflows;
 
+  console.log('161 ======workflows========= ', workflows.length);
   let runs = [];
   for (let workflow of workflows) {
     const {
@@ -223,8 +224,7 @@ async function getAllRunsForWorkflow() {
     runs.push(workflowArray);
   }
 
-  console.log('226 =======runs======== ', runs);
-
+  console.log('226 =======runs======== ', runs.length);
   return runs;
 }
 
@@ -320,7 +320,7 @@ async function generateTestHistoryInfo() {
 
     return_data.push(workflow);
 
-    console.log('323 ====return_data==============', return_data);
+    console.log('323 ====return_data==============', return_data.length);
   }
 
   const existingTestHistoryObject = JSON.parse(fs.readFileSync(thPath, "utf8"));
