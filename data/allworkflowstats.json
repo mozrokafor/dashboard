@@ -1,1 +1,1 @@
-[{"branch":"main","display_title":"Fix a crash in the current \"subscription confirm\" controller step - V…","created_at":"2023-03-09T17:39:23Z","author":"Andrea Marchesini","duration":"1hr 58m 10s"}]
+[{"branch":"main","display_title":"Avoid multiple reconnect when changing custom DNS - VPN-4304 (#6262)","created_at":"2023-03-09T19:17:09Z","author":"Andrea Marchesini","duration":"0hr 50m 18s"}]
