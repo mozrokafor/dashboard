@@ -1,1 +1,1 @@
-[{"branch":"releases/2.14.0","display_title":"VPN-3706 recover orphaned wireguard process (#6064)","created_at":"2023-03-07T16:38:06Z","author":"Sebastian Streich","duration":"1hr 47m 31s"}]
+[{"branch":"releases/2.14.0","display_title":"Avoid multiple reconnect when changing custom DNS - VPN-4304 (#6262)","created_at":"2023-03-09T19:19:29Z","author":"Andrea Marchesini","duration":"1hr 44m 19s"}]
