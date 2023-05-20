@@ -1,1 +1,1 @@
-[{"branch":"main","display_title":"ci: remove bogus check for destination_paths in beermover (#6950)","created_at":"2023-05-19T21:31:35Z","author":"Andrew Halberstadt","duration":"2hr 18m 15s"}]
+[{"branch":"main","display_title":"ci: resolve 'notify.recipients' in release_notify tasks (#6951)","created_at":"2023-05-20T11:53:39Z","author":"Andrew Halberstadt","duration":"0hr 58m 42s"}]
