@@ -5,7 +5,7 @@ const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
 const fs = require("fs");
 const _ = require("lodash");
 
-const branch = "releases/2.14.0"
+const branch = "releases/2.15.0"
 
 const orgInfo = {
   owner: "mozilla-mobile",
