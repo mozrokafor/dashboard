@@ -1,0 +1,2276 @@
+[
+  {
+    "id": 1702528171117,
+    "suites": [
+      {
+        "title": "stage - Breaches Dashboard - Headers",
+        "fileName": "breachResolution.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the site header options work correctly for a signed in user",
+            "status": "skipped",
+            "duration": 0,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": " Verify that the user can navigate through the Monitor dashboard",
+            "status": "passed",
+            "duration": 3151,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 4103,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 5306,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 3307,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the Fixed tab layout and tooltips are displayed correctly",
+            "status": "passed",
+            "duration": 2861,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header options work correctly for a signed in user",
+            "status": "skipped",
+            "duration": 0,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 1766,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": " Verify that the user can navigate through the Monitor dashboard",
+            "status": "passed",
+            "duration": 1938,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 3501,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 3198,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the Fixed tab layout and tooltips are displayed correctly",
+            "status": "passed",
+            "duration": 3376,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Breaches Dashboard - Headers"
+      },
+      {
+        "title": "stage - Authentication flow verification @smoke",
+        "fileName": "auth.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify sign in with existing user",
+            "status": "passed",
+            "duration": 9161,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify sign up with new user",
+            "status": "passed",
+            "duration": 15058,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify sign in with existing user",
+            "status": "passed",
+            "duration": 6436,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify sign up with new user",
+            "status": "passed",
+            "duration": 12695,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Authentication flow verification @smoke"
+      },
+      {
+        "title": "stage - Breaches Dashboard - Headers - Outside of U.S.",
+        "fileName": "dashboard.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 2397,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 2337,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Breaches Dashboard - Headers - Outside of U.S."
+      },
+      {
+        "title": "stage - Breaches Dashboard - Content",
+        "fileName": "dashboard.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the exposure list contains only fixed and in progress cards",
+            "status": "passed",
+            "duration": 2697,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the exposure list contains action needed",
+            "status": "passed",
+            "duration": 3334,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the exposure list contains action needed",
+            "status": "passed",
+            "duration": 2352,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the exposure list contains only fixed and in progress cards",
+            "status": "passed",
+            "duration": 2808,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Breaches Dashboard - Content"
+      },
+      {
+        "title": "stage - Landingpage element verification",
+        "fileName": "landing.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": " Verify that the site footer options work correctly ",
+            "status": "passed",
+            "duration": 1373,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify landingpage elements",
+            "status": "passed",
+            "duration": 2568,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site footer is displayed correctly @ui",
+            "status": "failed",
+            "duration": 2737,
+            "retries": 0,
+            "errors": [
+              {
+                "message": "Error: \u001b[31mScreenshot comparison failed:\u001b[39m\n\n  108469 pixels (ratio 0.92 of all image pixels) are different.\n\nExpected: \u001b[33m/Users/rokafor/github/monitor/reporter/src/e2e/specs/landing.spec.ts-snapshots/stage-landingFooter-chromium-darwin.png\u001b[39m\nReceived: \u001b[33m/Users/rokafor/github/monitor/reporter/src/e2e/test-results/landing-stage---Landingpage-element-verificati-01741--that-the-site-footer-is-displayed-correctly-ui-chromium/stage-landingFooter-actual.png\u001b[39m\n    Diff: \u001b[33m/Users/rokafor/github/monitor/reporter/src/e2e/test-results/landing-stage---Landingpage-element-verificati-01741--that-the-site-footer-is-displayed-correctly-ui-chromium/stage-landingFooter-diff.png\u001b[39m\n\nCall log:\n  \u001b[2m- page._expectScreenshot with timeout 5000ms\u001b[22m\n\u001b[2m  -   verifying given screenshot expectation\u001b[22m\n\u001b[2m  - waiting for locator('.site-footer')\u001b[22m\n\u001b[2m  -   locator resolved to <footer class=\"site-footer\">…</footer>\u001b[22m\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  -   waiting for element to be visible and stable\u001b[22m\n\u001b[2m  -   element is visible and stable\u001b[22m\n\u001b[2m  - 110049 pixels (ratio 0.93 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - waiting for locator('.site-footer')\u001b[22m\n\u001b[2m  -   locator resolved to <footer class=\"site-footer\">…</footer>\u001b[22m\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  -   waiting for element to be visible and stable\u001b[22m\n\u001b[2m  -   element is visible and stable\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - 108469 pixels (ratio 0.92 of all image pixels) are different.\u001b[22m\n",
+                "stack": "Error: \u001b[31mScreenshot comparison failed:\u001b[39m\n\n  108469 pixels (ratio 0.92 of all image pixels) are different.\n\nExpected: \u001b[33m/Users/rokafor/github/monitor/reporter/src/e2e/specs/landing.spec.ts-snapshots/stage-landingFooter-chromium-darwin.png\u001b[39m\nReceived: \u001b[33m/Users/rokafor/github/monitor/reporter/src/e2e/test-results/landing-stage---Landingpage-element-verificati-01741--that-the-site-footer-is-displayed-correctly-ui-chromium/stage-landingFooter-actual.png\u001b[39m\n    Diff: \u001b[33m/Users/rokafor/github/monitor/reporter/src/e2e/test-results/landing-stage---Landingpage-element-verificati-01741--that-the-site-footer-is-displayed-correctly-ui-chromium/stage-landingFooter-diff.png\u001b[39m\n\nCall log:\n  \u001b[2m- page._expectScreenshot with timeout 5000ms\u001b[22m\n\u001b[2m  -   verifying given screenshot expectation\u001b[22m\n\u001b[2m  - waiting for locator('.site-footer')\u001b[22m\n\u001b[2m  -   locator resolved to <footer class=\"site-footer\">…</footer>\u001b[22m\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  -   waiting for element to be visible and stable\u001b[22m\n\u001b[2m  -   element is visible and stable\u001b[22m\n\u001b[2m  - 110049 pixels (ratio 0.93 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - waiting for locator('.site-footer')\u001b[22m\n\u001b[2m  -   locator resolved to <footer class=\"site-footer\">…</footer>\u001b[22m\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  -   waiting for element to be visible and stable\u001b[22m\n\u001b[2m  -   element is visible and stable\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - 108469 pixels (ratio 0.92 of all image pixels) are different.\u001b[22m\n\n    at /Users/rokafor/github/monitor/reporter/src/e2e/specs/landing.spec.ts:65:45",
+                "location": {
+                  "file": "/Users/rokafor/github/monitor/reporter/src/e2e/specs/landing.spec.ts",
+                  "column": 45,
+                  "line": 65
+                },
+                "snippet": "\u001b[0m \u001b[90m 63 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 64 |\u001b[39m     \u001b[90m// visually verify landingpage footer is displayed correctly\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 65 |\u001b[39m     \u001b[36mawait\u001b[39m expect(landingPage\u001b[33m.\u001b[39mlandingFooter)\u001b[33m.\u001b[39mtoHaveScreenshot(\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 66 |\u001b[39m       \u001b[32m`${process.env.E2E_TEST_ENV}-landingFooter.png`\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 67 |\u001b[39m       defaultScreenshotOpts\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 68 |\u001b[39m     )\u001b[33m;\u001b[39m\u001b[0m"
+              }
+            ],
+            "browser": "chromium"
+          },
+          {
+            "title": " Verify that the site footer options work correctly ",
+            "status": "passed",
+            "duration": 1252,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify landingpage elements",
+            "status": "passed",
+            "duration": 2293,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site footer is displayed correctly @ui",
+            "status": "passed",
+            "duration": 1874,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Landingpage element verification"
+      },
+      {
+        "title": "stage - Landingpage Functionality Verification",
+        "fileName": "landing.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify landing page elements - free scan",
+            "status": "passed",
+            "duration": 3588,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify landing page elements - free scan",
+            "status": "timedOut",
+            "duration": 60002,
+            "retries": 0,
+            "errors": [
+              {
+                "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+              }
+            ],
+            "browser": "chromium"
+          }
+        ],
+        "suiteId": "stage - Landingpage Functionality Verification"
+      },
+      {
+        "title": "stage Settings Page",
+        "fileName": "settings.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify settings page loads",
+            "status": "passed",
+            "duration": 2096,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that a user can select between the Breach alert preferences",
+            "status": "passed",
+            "duration": 2998,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that a user can select between the Breach alert preferences",
+            "status": "passed",
+            "duration": 1311,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify settings page loads",
+            "status": "passed",
+            "duration": 1786,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage Settings Page"
+      }
+    ],
+    "totalDuration": 77269.841,
+    "startTime": "2023-12-14T04:28:20.588Z",
+    "endTime": "2023-12-14T04:29:31.117Z",
+    "totalTests": 34,
+    "testsPassed": 30,
+    "testsFailed": 1,
+    "testsFlaky": 0,
+    "testsSkipped": 2,
+    "averageTestDuration": 2272.6423823529412,
+    "testsTimedout": 1,
+    "status": "failed",
+    "environment": "stage",
+    "failures": [
+      {
+        "title": "Verify that the site footer is displayed correctly @ui",
+        "status": "failed",
+        "duration": 2737,
+        "retries": 0,
+        "errors": [
+          {
+            "message": "Error: \u001b[31mScreenshot comparison failed:\u001b[39m\n\n  108469 pixels (ratio 0.92 of all image pixels) are different.\n\nExpected: \u001b[33m/Users/rokafor/github/monitor/reporter/src/e2e/specs/landing.spec.ts-snapshots/stage-landingFooter-chromium-darwin.png\u001b[39m\nReceived: \u001b[33m/Users/rokafor/github/monitor/reporter/src/e2e/test-results/landing-stage---Landingpage-element-verificati-01741--that-the-site-footer-is-displayed-correctly-ui-chromium/stage-landingFooter-actual.png\u001b[39m\n    Diff: \u001b[33m/Users/rokafor/github/monitor/reporter/src/e2e/test-results/landing-stage---Landingpage-element-verificati-01741--that-the-site-footer-is-displayed-correctly-ui-chromium/stage-landingFooter-diff.png\u001b[39m\n\nCall log:\n  \u001b[2m- page._expectScreenshot with timeout 5000ms\u001b[22m\n\u001b[2m  -   verifying given screenshot expectation\u001b[22m\n\u001b[2m  - waiting for locator('.site-footer')\u001b[22m\n\u001b[2m  -   locator resolved to <footer class=\"site-footer\">…</footer>\u001b[22m\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  -   waiting for element to be visible and stable\u001b[22m\n\u001b[2m  -   element is visible and stable\u001b[22m\n\u001b[2m  - 110049 pixels (ratio 0.93 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - waiting for locator('.site-footer')\u001b[22m\n\u001b[2m  -   locator resolved to <footer class=\"site-footer\">…</footer>\u001b[22m\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  -   waiting for element to be visible and stable\u001b[22m\n\u001b[2m  -   element is visible and stable\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - 108469 pixels (ratio 0.92 of all image pixels) are different.\u001b[22m\n",
+            "stack": "Error: \u001b[31mScreenshot comparison failed:\u001b[39m\n\n  108469 pixels (ratio 0.92 of all image pixels) are different.\n\nExpected: \u001b[33m/Users/rokafor/github/monitor/reporter/src/e2e/specs/landing.spec.ts-snapshots/stage-landingFooter-chromium-darwin.png\u001b[39m\nReceived: \u001b[33m/Users/rokafor/github/monitor/reporter/src/e2e/test-results/landing-stage---Landingpage-element-verificati-01741--that-the-site-footer-is-displayed-correctly-ui-chromium/stage-landingFooter-actual.png\u001b[39m\n    Diff: \u001b[33m/Users/rokafor/github/monitor/reporter/src/e2e/test-results/landing-stage---Landingpage-element-verificati-01741--that-the-site-footer-is-displayed-correctly-ui-chromium/stage-landingFooter-diff.png\u001b[39m\n\nCall log:\n  \u001b[2m- page._expectScreenshot with timeout 5000ms\u001b[22m\n\u001b[2m  -   verifying given screenshot expectation\u001b[22m\n\u001b[2m  - waiting for locator('.site-footer')\u001b[22m\n\u001b[2m  -   locator resolved to <footer class=\"site-footer\">…</footer>\u001b[22m\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  -   waiting for element to be visible and stable\u001b[22m\n\u001b[2m  -   element is visible and stable\u001b[22m\n\u001b[2m  - 110049 pixels (ratio 0.93 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - waiting for locator('.site-footer')\u001b[22m\n\u001b[2m  -   locator resolved to <footer class=\"site-footer\">…</footer>\u001b[22m\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  -   waiting for element to be visible and stable\u001b[22m\n\u001b[2m  -   element is visible and stable\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - 108469 pixels (ratio 0.92 of all image pixels) are different.\u001b[22m\n\n    at /Users/rokafor/github/monitor/reporter/src/e2e/specs/landing.spec.ts:65:45",
+            "location": {
+              "file": "/Users/rokafor/github/monitor/reporter/src/e2e/specs/landing.spec.ts",
+              "column": 45,
+              "line": 65
+            },
+            "snippet": "\u001b[0m \u001b[90m 63 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 64 |\u001b[39m     \u001b[90m// visually verify landingpage footer is displayed correctly\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 65 |\u001b[39m     \u001b[36mawait\u001b[39m expect(landingPage\u001b[33m.\u001b[39mlandingFooter)\u001b[33m.\u001b[39mtoHaveScreenshot(\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 66 |\u001b[39m       \u001b[32m`${process.env.E2E_TEST_ENV}-landingFooter.png`\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 67 |\u001b[39m       defaultScreenshotOpts\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 68 |\u001b[39m     )\u001b[33m;\u001b[39m\u001b[0m"
+          }
+        ],
+        "browser": "chromium"
+      },
+      {
+        "title": "Verify landing page elements - free scan",
+        "status": "timedOut",
+        "duration": 60002,
+        "retries": 0,
+        "errors": [
+          { "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m" }
+        ],
+        "browser": "chromium"
+      }
+    ],
+    "skipped": [
+      {
+        "title": "Verify that the site header options work correctly for a signed in user",
+        "status": "skipped",
+        "duration": 0,
+        "retries": 0,
+        "errors": [],
+        "browser": "chromium"
+      },
+      {
+        "title": "Verify that the site header options work correctly for a signed in user",
+        "status": "skipped",
+        "duration": 0,
+        "retries": 0,
+        "errors": [],
+        "browser": "firefox"
+      }
+    ]
+  },
+  {
+    "id": 1702528752774,
+    "suites": [
+      {
+        "title": "stage - Breaches Dashboard - Headers",
+        "fileName": "breachResolution.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the site header options work correctly for a signed in user",
+            "status": "skipped",
+            "duration": 0,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 3046,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": " Verify that the user can navigate through the Monitor dashboard",
+            "status": "passed",
+            "duration": 3059,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 4235,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 3197,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the Fixed tab layout and tooltips are displayed correctly",
+            "status": "passed",
+            "duration": 3368,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header options work correctly for a signed in user",
+            "status": "skipped",
+            "duration": 0,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 2042,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": " Verify that the user can navigate through the Monitor dashboard",
+            "status": "passed",
+            "duration": 2119,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 3757,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the Fixed tab layout and tooltips are displayed correctly",
+            "status": "passed",
+            "duration": 3343,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 3239,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Breaches Dashboard - Headers"
+      },
+      {
+        "title": "stage - Authentication flow verification @smoke",
+        "fileName": "auth.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify sign in with existing user",
+            "status": "passed",
+            "duration": 7153,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify sign up with new user",
+            "status": "passed",
+            "duration": 14228,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify sign in with existing user",
+            "status": "passed",
+            "duration": 8639,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify sign up with new user",
+            "status": "passed",
+            "duration": 13864,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Authentication flow verification @smoke"
+      },
+      {
+        "title": "stage - Breaches Dashboard - Headers - Outside of U.S.",
+        "fileName": "dashboard.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 2950,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 2243,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Breaches Dashboard - Headers - Outside of U.S."
+      },
+      {
+        "title": "stage - Breaches Dashboard - Content",
+        "fileName": "dashboard.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the exposure list contains action needed",
+            "status": "passed",
+            "duration": 2186,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the exposure list contains only fixed and in progress cards",
+            "status": "passed",
+            "duration": 2267,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the exposure list contains action needed",
+            "status": "passed",
+            "duration": 4762,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the exposure list contains only fixed and in progress cards",
+            "status": "passed",
+            "duration": 4596,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Breaches Dashboard - Content"
+      },
+      {
+        "title": "stage - Landingpage element verification",
+        "fileName": "landing.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify landingpage elements",
+            "status": "passed",
+            "duration": 2210,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": " Verify that the site footer options work correctly ",
+            "status": "passed",
+            "duration": 2255,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site footer is displayed correctly @ui",
+            "status": "passed",
+            "duration": 1129,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": " Verify that the site footer options work correctly ",
+            "status": "passed",
+            "duration": 2056,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify landingpage elements",
+            "status": "passed",
+            "duration": 1837,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site footer is displayed correctly @ui",
+            "status": "passed",
+            "duration": 1493,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Landingpage element verification"
+      },
+      {
+        "title": "stage - Landingpage Functionality Verification",
+        "fileName": "landing.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify landing page elements - free scan",
+            "status": "passed",
+            "duration": 3040,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify landing page elements - free scan",
+            "status": "timedOut",
+            "duration": 60002,
+            "retries": 0,
+            "errors": [
+              {
+                "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+              }
+            ],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Landingpage Functionality Verification"
+      },
+      {
+        "title": "stage Settings Page",
+        "fileName": "settings.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that a user can select between the Breach alert preferences",
+            "status": "passed",
+            "duration": 1460,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify settings page loads",
+            "status": "passed",
+            "duration": 1762,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify settings page loads",
+            "status": "passed",
+            "duration": 1931,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that a user can select between the Breach alert preferences",
+            "status": "passed",
+            "duration": 1903,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage Settings Page"
+      }
+    ],
+    "totalDuration": 90277.271,
+    "startTime": "2023-12-14T04:37:49.802Z",
+    "endTime": "2023-12-14T04:39:12.774Z",
+    "totalTests": 34,
+    "testsPassed": 31,
+    "testsFailed": 0,
+    "testsFlaky": 0,
+    "testsSkipped": 2,
+    "averageTestDuration": 2655.2138529411764,
+    "testsTimedout": 1,
+    "status": "failed",
+    "environment": "stage",
+    "failures": [
+      {
+        "title": "Verify landing page elements - free scan",
+        "status": "timedOut",
+        "duration": 60002,
+        "retries": 0,
+        "errors": [
+          { "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m" }
+        ],
+        "browser": "firefox"
+      }
+    ],
+    "skipped": [
+      {
+        "title": "Verify that the site header options work correctly for a signed in user",
+        "status": "skipped",
+        "duration": 0,
+        "retries": 0,
+        "errors": [],
+        "browser": "chromium"
+      },
+      {
+        "title": "Verify that the site header options work correctly for a signed in user",
+        "status": "skipped",
+        "duration": 0,
+        "retries": 0,
+        "errors": [],
+        "browser": "firefox"
+      }
+    ]
+  },
+  {
+    "id": 1702528871316,
+    "suites": [
+      {
+        "title": "stage - Breaches Dashboard - Headers",
+        "fileName": "breachResolution.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the site header options work correctly for a signed in user",
+            "status": "skipped",
+            "duration": 0,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": " Verify that the user can navigate through the Monitor dashboard",
+            "status": "passed",
+            "duration": 3830,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 3845,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 4835,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 2462,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the Fixed tab layout and tooltips are displayed correctly",
+            "status": "passed",
+            "duration": 7550,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header options work correctly for a signed in user",
+            "status": "skipped",
+            "duration": 0,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": " Verify that the user can navigate through the Monitor dashboard",
+            "status": "passed",
+            "duration": 1835,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 2335,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 2601,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 4757,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the Fixed tab layout and tooltips are displayed correctly",
+            "status": "passed",
+            "duration": 2851,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Breaches Dashboard - Headers"
+      },
+      {
+        "title": "stage - Authentication flow verification @smoke",
+        "fileName": "auth.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify sign in with existing user",
+            "status": "passed",
+            "duration": 9424,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify sign up with new user",
+            "status": "passed",
+            "duration": 13197,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify sign in with existing user",
+            "status": "passed",
+            "duration": 10316,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify sign up with new user",
+            "status": "passed",
+            "duration": 13177,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Authentication flow verification @smoke"
+      },
+      {
+        "title": "stage - Breaches Dashboard - Headers - Outside of U.S.",
+        "fileName": "dashboard.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 2742,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 3157,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Breaches Dashboard - Headers - Outside of U.S."
+      },
+      {
+        "title": "stage - Breaches Dashboard - Content",
+        "fileName": "dashboard.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the exposure list contains action needed",
+            "status": "passed",
+            "duration": 2744,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the exposure list contains only fixed and in progress cards",
+            "status": "passed",
+            "duration": 3891,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the exposure list contains only fixed and in progress cards",
+            "status": "passed",
+            "duration": 3039,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the exposure list contains action needed",
+            "status": "passed",
+            "duration": 5161,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Breaches Dashboard - Content"
+      },
+      {
+        "title": "stage - Landingpage element verification",
+        "fileName": "landing.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": " Verify that the site footer options work correctly ",
+            "status": "passed",
+            "duration": 1369,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify landingpage elements",
+            "status": "passed",
+            "duration": 1026,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site footer is displayed correctly @ui",
+            "status": "passed",
+            "duration": 1448,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": " Verify that the site footer options work correctly ",
+            "status": "passed",
+            "duration": 1691,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify landingpage elements",
+            "status": "passed",
+            "duration": 1716,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site footer is displayed correctly @ui",
+            "status": "passed",
+            "duration": 2424,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Landingpage element verification"
+      },
+      {
+        "title": "stage - Landingpage Functionality Verification",
+        "fileName": "landing.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify landing page elements - free scan",
+            "status": "passed",
+            "duration": 3708,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify landing page elements - free scan",
+            "status": "timedOut",
+            "duration": 60001,
+            "retries": 0,
+            "errors": [
+              {
+                "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+              }
+            ],
+            "browser": "chromium"
+          }
+        ],
+        "suiteId": "stage - Landingpage Functionality Verification"
+      },
+      {
+        "title": "stage Settings Page",
+        "fileName": "settings.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that a user can select between the Breach alert preferences",
+            "status": "passed",
+            "duration": 1608,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify settings page loads",
+            "status": "passed",
+            "duration": 1759,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify settings page loads",
+            "status": "passed",
+            "duration": 2187,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that a user can select between the Breach alert preferences",
+            "status": "passed",
+            "duration": 1597,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage Settings Page"
+      }
+    ],
+    "totalDuration": 81747.24799999999,
+    "startTime": "2023-12-14T04:40:00.043Z",
+    "endTime": "2023-12-14T04:41:11.316Z",
+    "totalTests": 34,
+    "testsPassed": 31,
+    "testsFailed": 0,
+    "testsFlaky": 0,
+    "testsSkipped": 2,
+    "averageTestDuration": 2404.3308235294116,
+    "testsTimedout": 1,
+    "status": "failed",
+    "environment": "stage",
+    "failures": [
+      {
+        "title": "Verify landing page elements - free scan",
+        "status": "timedOut",
+        "duration": 60001,
+        "retries": 0,
+        "errors": [
+          { "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m" }
+        ],
+        "browser": "chromium"
+      }
+    ],
+    "skipped": [
+      {
+        "title": "Verify that the site header options work correctly for a signed in user",
+        "status": "skipped",
+        "duration": 0,
+        "retries": 0,
+        "errors": [],
+        "browser": "chromium"
+      },
+      {
+        "title": "Verify that the site header options work correctly for a signed in user",
+        "status": "skipped",
+        "duration": 0,
+        "retries": 0,
+        "errors": [],
+        "browser": "firefox"
+      }
+    ]
+  },
+  {
+    "id": 1702529003070,
+    "suites": [
+      {
+        "title": "stage - Breaches Dashboard - Headers",
+        "fileName": "breachResolution.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the site header options work correctly for a signed in user",
+            "status": "skipped",
+            "duration": 0,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 2942,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": " Verify that the user can navigate through the Monitor dashboard",
+            "status": "passed",
+            "duration": 3004,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 5249,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the Fixed tab layout and tooltips are displayed correctly",
+            "status": "passed",
+            "duration": 2718,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 2871,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header options work correctly for a signed in user",
+            "status": "skipped",
+            "duration": 0,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 2169,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": " Verify that the user can navigate through the Monitor dashboard",
+            "status": "passed",
+            "duration": 1793,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 2999,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 2732,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the Fixed tab layout and tooltips are displayed correctly",
+            "status": "passed",
+            "duration": 3126,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Breaches Dashboard - Headers"
+      },
+      {
+        "title": "stage - Authentication flow verification @smoke",
+        "fileName": "auth.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify sign in with existing user",
+            "status": "passed",
+            "duration": 8224,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify sign up with new user",
+            "status": "passed",
+            "duration": 13709,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify sign in with existing user",
+            "status": "passed",
+            "duration": 6050,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify sign up with new user",
+            "status": "passed",
+            "duration": 12211,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Authentication flow verification @smoke"
+      },
+      {
+        "title": "stage - Breaches Dashboard - Headers - Outside of U.S.",
+        "fileName": "dashboard.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 2964,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 3107,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Breaches Dashboard - Headers - Outside of U.S."
+      },
+      {
+        "title": "stage - Breaches Dashboard - Content",
+        "fileName": "dashboard.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the exposure list contains action needed",
+            "status": "passed",
+            "duration": 2510,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the exposure list contains only fixed and in progress cards",
+            "status": "passed",
+            "duration": 2782,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the exposure list contains action needed",
+            "status": "passed",
+            "duration": 2504,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the exposure list contains only fixed and in progress cards",
+            "status": "passed",
+            "duration": 2653,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Breaches Dashboard - Content"
+      },
+      {
+        "title": "stage - Landingpage element verification",
+        "fileName": "landing.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the site footer is displayed correctly @ui",
+            "status": "passed",
+            "duration": 1521,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify landingpage elements",
+            "status": "passed",
+            "duration": 1829,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": " Verify that the site footer options work correctly ",
+            "status": "passed",
+            "duration": 1971,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": " Verify that the site footer options work correctly ",
+            "status": "passed",
+            "duration": 2035,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify landingpage elements",
+            "status": "passed",
+            "duration": 1910,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site footer is displayed correctly @ui",
+            "status": "passed",
+            "duration": 1632,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Landingpage element verification"
+      },
+      {
+        "title": "stage - Landingpage Functionality Verification",
+        "fileName": "landing.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify landing page elements - free scan",
+            "status": "passed",
+            "duration": 4141,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify landing page elements - free scan",
+            "status": "timedOut",
+            "duration": 60001,
+            "retries": 0,
+            "errors": [
+              {
+                "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+              }
+            ],
+            "browser": "chromium"
+          }
+        ],
+        "suiteId": "stage - Landingpage Functionality Verification"
+      },
+      {
+        "title": "stage Settings Page",
+        "fileName": "settings.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify settings page loads",
+            "status": "passed",
+            "duration": 2279,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that a user can select between the Breach alert preferences",
+            "status": "passed",
+            "duration": 2677,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that a user can select between the Breach alert preferences",
+            "status": "passed",
+            "duration": 1834,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify settings page loads",
+            "status": "passed",
+            "duration": 2405,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage Settings Page"
+      }
+    ],
+    "totalDuration": 76440.386,
+    "startTime": "2023-12-14T04:42:13.636Z",
+    "endTime": "2023-12-14T04:43:23.070Z",
+    "totalTests": 34,
+    "testsPassed": 31,
+    "testsFailed": 0,
+    "testsFlaky": 0,
+    "testsSkipped": 2,
+    "averageTestDuration": 2248.2466470588233,
+    "testsTimedout": 1,
+    "status": "failed",
+    "environment": "stage",
+    "failures": [
+      {
+        "title": "Verify landing page elements - free scan",
+        "status": "timedOut",
+        "duration": 60001,
+        "retries": 0,
+        "errors": [
+          { "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m" }
+        ],
+        "browser": "chromium"
+      }
+    ],
+    "skipped": [
+      {
+        "title": "Verify that the site header options work correctly for a signed in user",
+        "status": "skipped",
+        "duration": 0,
+        "retries": 0,
+        "errors": [],
+        "browser": "chromium"
+      },
+      {
+        "title": "Verify that the site header options work correctly for a signed in user",
+        "status": "skipped",
+        "duration": 0,
+        "retries": 0,
+        "errors": [],
+        "browser": "firefox"
+      }
+    ]
+  },
+  {
+    "id": 1702529044779,
+    "suites": [
+      {
+        "title": "stage - Breaches Dashboard - Headers",
+        "fileName": "breachResolution.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the site header options work correctly for a signed in user",
+            "status": "skipped",
+            "duration": 0,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": " Verify that the user can navigate through the Monitor dashboard",
+            "status": "passed",
+            "duration": 2795,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 3218,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 4723,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 2732,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the Fixed tab layout and tooltips are displayed correctly",
+            "status": "passed",
+            "duration": 3214,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header options work correctly for a signed in user",
+            "status": "skipped",
+            "duration": 0,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 2369,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": " Verify that the user can navigate through the Monitor dashboard",
+            "status": "passed",
+            "duration": 1754,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 3170,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 2885,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the Fixed tab layout and tooltips are displayed correctly",
+            "status": "passed",
+            "duration": 4768,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Breaches Dashboard - Headers"
+      },
+      {
+        "title": "stage - Authentication flow verification @smoke",
+        "fileName": "auth.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify sign in with existing user",
+            "status": "passed",
+            "duration": 7837,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify sign up with new user",
+            "status": "passed",
+            "duration": 12846,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify sign in with existing user",
+            "status": "passed",
+            "duration": 8593,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify sign up with new user",
+            "status": "passed",
+            "duration": 13253,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Authentication flow verification @smoke"
+      },
+      {
+        "title": "stage - Breaches Dashboard - Headers - Outside of U.S.",
+        "fileName": "dashboard.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 2650,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 4458,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Breaches Dashboard - Headers - Outside of U.S."
+      },
+      {
+        "title": "stage - Breaches Dashboard - Content",
+        "fileName": "dashboard.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the exposure list contains only fixed and in progress cards",
+            "status": "passed",
+            "duration": 2281,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the exposure list contains action needed",
+            "status": "passed",
+            "duration": 3185,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the exposure list contains action needed",
+            "status": "passed",
+            "duration": 2432,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the exposure list contains only fixed and in progress cards",
+            "status": "passed",
+            "duration": 3684,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Breaches Dashboard - Content"
+      },
+      {
+        "title": "stage - Landingpage element verification",
+        "fileName": "landing.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": " Verify that the site footer options work correctly ",
+            "status": "passed",
+            "duration": 1130,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify landingpage elements",
+            "status": "passed",
+            "duration": 993,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site footer is displayed correctly @ui",
+            "status": "passed",
+            "duration": 1807,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": " Verify that the site footer options work correctly ",
+            "status": "passed",
+            "duration": 1675,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify landingpage elements",
+            "status": "passed",
+            "duration": 1645,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site footer is displayed correctly @ui",
+            "status": "passed",
+            "duration": 1768,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Landingpage element verification"
+      },
+      {
+        "title": "stage - Landingpage Functionality Verification",
+        "fileName": "landing.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify landing page elements - free scan",
+            "status": "passed",
+            "duration": 6716,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify landing page elements - free scan",
+            "status": "passed",
+            "duration": 6699,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Landingpage Functionality Verification"
+      },
+      {
+        "title": "stage Settings Page",
+        "fileName": "settings.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that a user can select between the Breach alert preferences",
+            "status": "passed",
+            "duration": 1518,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify settings page loads",
+            "status": "passed",
+            "duration": 1751,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify settings page loads",
+            "status": "passed",
+            "duration": 1584,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that a user can select between the Breach alert preferences",
+            "status": "passed",
+            "duration": 1688,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage Settings Page"
+      }
+    ],
+    "totalDuration": 36619.715000000004,
+    "startTime": "2023-12-14T04:43:35.164Z",
+    "endTime": "2023-12-14T04:44:04.779Z",
+    "totalTests": 34,
+    "testsPassed": 32,
+    "testsFailed": 0,
+    "testsFlaky": 0,
+    "testsSkipped": 2,
+    "averageTestDuration": 1077.0504411764707,
+    "testsTimedout": 0,
+    "status": "passed",
+    "environment": "stage",
+    "failures": [],
+    "skipped": [
+      {
+        "title": "Verify that the site header options work correctly for a signed in user",
+        "status": "skipped",
+        "duration": 0,
+        "retries": 0,
+        "errors": [],
+        "browser": "chromium"
+      },
+      {
+        "title": "Verify that the site header options work correctly for a signed in user",
+        "status": "skipped",
+        "duration": 0,
+        "retries": 0,
+        "errors": [],
+        "browser": "firefox"
+      }
+    ]
+  },
+  {
+    "id": 1702529078650,
+    "suites": [
+      {
+        "title": "stage - Breaches Dashboard - Headers",
+        "fileName": "breachResolution.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the site header options work correctly for a signed in user",
+            "status": "skipped",
+            "duration": 0,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 2539,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": " Verify that the user can navigate through the Monitor dashboard",
+            "status": "passed",
+            "duration": 2911,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 4261,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 2503,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the Fixed tab layout and tooltips are displayed correctly",
+            "status": "passed",
+            "duration": 2486,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header options work correctly for a signed in user",
+            "status": "skipped",
+            "duration": 0,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 1938,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": " Verify that the user can navigate through the Monitor dashboard",
+            "status": "passed",
+            "duration": 1819,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 3175,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site header is displayed correctly for signed in users",
+            "status": "passed",
+            "duration": 3641,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the Fixed tab layout and tooltips are displayed correctly",
+            "status": "passed",
+            "duration": 3529,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Breaches Dashboard - Headers"
+      },
+      {
+        "title": "stage - Authentication flow verification @smoke",
+        "fileName": "auth.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify sign in with existing user",
+            "status": "passed",
+            "duration": 7293,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify sign up with new user",
+            "status": "passed",
+            "duration": 12419,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify sign in with existing user",
+            "status": "passed",
+            "duration": 7052,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify sign up with new user",
+            "status": "passed",
+            "duration": 12964,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Authentication flow verification @smoke"
+      },
+      {
+        "title": "stage - Breaches Dashboard - Headers - Outside of U.S.",
+        "fileName": "dashboard.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 2816,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site header and navigation bar is displayed correctly",
+            "status": "passed",
+            "duration": 2362,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Breaches Dashboard - Headers - Outside of U.S."
+      },
+      {
+        "title": "stage - Breaches Dashboard - Content",
+        "fileName": "dashboard.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify that the exposure list contains action needed",
+            "status": "passed",
+            "duration": 3152,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the exposure list contains only fixed and in progress cards",
+            "status": "passed",
+            "duration": 2870,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the exposure list contains action needed",
+            "status": "passed",
+            "duration": 2513,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the exposure list contains only fixed and in progress cards",
+            "status": "passed",
+            "duration": 2498,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Breaches Dashboard - Content"
+      },
+      {
+        "title": "stage - Landingpage element verification",
+        "fileName": "landing.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": " Verify that the site footer options work correctly ",
+            "status": "passed",
+            "duration": 954,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify landingpage elements",
+            "status": "passed",
+            "duration": 1036,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that the site footer is displayed correctly @ui",
+            "status": "passed",
+            "duration": 1337,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": " Verify that the site footer options work correctly ",
+            "status": "passed",
+            "duration": 1158,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify landingpage elements",
+            "status": "passed",
+            "duration": 986,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that the site footer is displayed correctly @ui",
+            "status": "passed",
+            "duration": 1801,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Landingpage element verification"
+      },
+      {
+        "title": "stage - Landingpage Functionality Verification",
+        "fileName": "landing.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify landing page elements - free scan",
+            "status": "passed",
+            "duration": 2993,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify landing page elements - free scan",
+            "status": "passed",
+            "duration": 3240,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage - Landingpage Functionality Verification"
+      },
+      {
+        "title": "stage Settings Page",
+        "fileName": "settings.spec.ts",
+        "duration": 0,
+        "tests": [
+          {
+            "title": "Verify settings page loads",
+            "status": "passed",
+            "duration": 1459,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify that a user can select between the Breach alert preferences",
+            "status": "passed",
+            "duration": 1678,
+            "retries": 0,
+            "errors": [],
+            "browser": "chromium"
+          },
+          {
+            "title": "Verify settings page loads",
+            "status": "passed",
+            "duration": 1800,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          },
+          {
+            "title": "Verify that a user can select between the Breach alert preferences",
+            "status": "passed",
+            "duration": 1456,
+            "retries": 0,
+            "errors": [],
+            "browser": "firefox"
+          }
+        ],
+        "suiteId": "stage Settings Page"
+      }
+    ],
+    "totalDuration": 29649.321,
+    "startTime": "2023-12-14T04:44:15.046Z",
+    "endTime": "2023-12-14T04:44:38.650Z",
+    "totalTests": 34,
+    "testsPassed": 32,
+    "testsFailed": 0,
+    "testsFlaky": 0,
+    "testsSkipped": 2,
+    "averageTestDuration": 872.0388529411765,
+    "testsTimedout": 0,
+    "status": "passed",
+    "environment": "stage",
+    "failures": [],
+    "skipped": [
+      {
+        "title": "Verify that the site header options work correctly for a signed in user",
+        "status": "skipped",
+        "duration": 0,
+        "retries": 0,
+        "errors": [],
+        "browser": "chromium"
+      },
+      {
+        "title": "Verify that the site header options work correctly for a signed in user",
+        "status": "skipped",
+        "duration": 0,
+        "retries": 0,
+        "errors": [],
+        "browser": "firefox"
+      }
+    ]
+  }
+]
